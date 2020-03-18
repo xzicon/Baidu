@@ -10,7 +10,7 @@ module.exports = function (grunt) {
         }
       },
       cssmin: {
-        'dist/second.css': 'decond.css'
+        'dist/second.css': 'second.css'
       },
       uglify: {
         release:{
@@ -22,13 +22,9 @@ module.exports = function (grunt) {
     });
   
     grunt.loadNpmTasks('grunt-contrib-htmlmin');
-  
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-  
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks("grunt-contrib-copy");
   
-    grunt.registerTask('minify', ['htmlmin', 'cssmin', 'uglify']);
-    grunt.registerTask("release", ['copy', 'htmlmin','cssmin', 'uglify']);
+    grunt.registerTask('minify', ['htmlmin', 'cssmin', 'uglify:release']);
   };
  
